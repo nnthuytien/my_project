@@ -1,0 +1,76 @@
+﻿@model DoAnCoSo.Models.LuongThang
+
+@{
+    ViewData["Title"] = "CreateLuongNVThang";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<h1>Tính lương nhân viên</h1>
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyTinhLuong">Quay Lại Danh Sách</a>
+<br />
+<br />
+<hr />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateLuongNVThang">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LId" class="control-label"></label>
+                <select asp-for="LId" class="form-control" asp-items="ViewBag.nhanvien"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayTL" class="control-label"></label>
+                <input type="date" asp-for="NgayTL" class="form-control" />
+                <span asp-validation-for="NgayTL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thang" class="control-label">Tháng</label>
+                <select asp-for="Thang" class="form-control">
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nam" class="control-label">Năm</label>
+                <input asp-for="Nam" class="form-control" placeholder="0000-xxxx" />
+                <span asp-validation-for="Nam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="LuongThoaThuan" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <input asp-for="NgayNghiCoLuong" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <input asp-for="NgayNghiKhongLuong" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <input asp-for="KhenThuong" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <input asp-for="KyLuat" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <label asp-for="PhuCap" class="control-label"></label>
+                <input asp-for="PhuCap" class="form-control" value="0" />
+                <span asp-validation-for="PhuCap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UngTruoc" class="control-label"></label>
+                <input asp-for="UngTruoc" class="form-control" value="0" />
+                <span asp-validation-for="UngTruoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ThucLanh" class="form-control" value="0" hidden />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

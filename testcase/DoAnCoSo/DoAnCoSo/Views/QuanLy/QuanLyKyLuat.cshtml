@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DoAnCoSo.Models.KyLuat>
+
+@{
+    ViewData["Title"] = "QuanLyKyLuat";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+<h1>Kỷ Luật</h1>
+<br />
+<a class="btn btn-primary" asp-action="CreateLoaiKL">Thêm Loại Kỷ Luật</a>
+<a class="btn btn-primary" asp-action="CreateKL">Thêm Kỷ Luật</a>
+<br />
+<br />
+<br />
+<table class="table table table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LyDo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayQD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTien)
+            </th>
+            <th>
+                Loại Kỷ Luật
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="table-info">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanViens.TenNhanVien)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LyDo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayQD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaiKyLuats.TenKL)
+            </td>
+            <td>
+                    <a asp-action="EditKL" asp-route-id="@item.Id">Chỉnh Sửa</a> |
+                    <a asp-action="DeleteKL" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<DoAnCoSo.Models.KhenThuong>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "QuanLyKTUser";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+<h1>Khen Thưởng</h1>
+<br />
+<a class="btn btn-primary" asp-action="QuanLyKLUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">Kỷ Luật</a>
+<br />
+<br />
+<br />
+<table class="table table table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LyDo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayQD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTien)
+            </th>
+            <th>
+                Loại Khen Thưởng
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-info">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanViens.TenNhanVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LyDo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayQD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoTien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.loaiKhenThuongs.TenKT)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

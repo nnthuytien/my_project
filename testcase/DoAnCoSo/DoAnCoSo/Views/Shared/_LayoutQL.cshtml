@@ -1,0 +1,198 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using Microsoft.AspNetCore.Identity
+@using DoAnCoSo.Models;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    var user = UserManager.GetUserAsync(User).Result;
+    var roles = UserManager.GetRolesAsync(user).Result;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- site icon -->
+    <link rel="icon" href="/_Layout_Admin/images/fevicon.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="/_Layout_Admin/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="/_Layout_Admin/css/custom.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="dashboard dashboard_1">
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar_blog_1">
+                    <div class="sidebar-header">
+                        <div class="logo_section">
+                            <a asp-controller="QuanLy" asp-action="Index"><img class="logo_icon img-responsive" src="/_Layout_Admin/images/logo/logo_icon.png" alt="#" /></a>
+                        </div>
+                    </div>
+                    <div class="sidebar_user_info">
+                        <div class="icon_setting"></div>
+                        <div class="user_profle_side">
+                            <div class="user_img"><img style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="@UserManager.GetUserAsync(User).Result.HinhAnh" alt="#" /></div>
+                            <div class="user_info">
+                                <h6>@UserManager.GetUserName(User)</h6>
+                                <p><span class="online_animation"></span> Online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar_blog_2">
+                    <h4>General</h4>
+                    <ul class="list-unstyled components">
+                        @if (roles.Contains("Admin"))
+                        {
+                            <li class="active">
+                                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-briefcase blue1_color"></i> <span>Quản lý hồ sơ nhân viên</span></a>
+                                <ul class="collapse list-unstyled" id="dashboard">
+                                    <li>
+                                        <a class="nav-link" asp-controller="QuanLy" asp-action="QuanLyNV">> <span>Danh sách nhân viên</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" asp-controller="QuanLy" asp-action="CreateNV">> <span>Thêm mới nhân viên</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user purple_color"></i> <span>Quản lý tài khoản</span></a>
+                                <ul class="collapse list-unstyled" id="element">
+                                    <li><a asp-area="" asp-controller="QuanLy" asp-action="QuanLyTK">> <span>Danh sách tài khoản</span></a></li>
+                                    <li><a asp-area="Identity" asp-page="/Account/Register">> <span>Tạo tài khoản mới</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-controller="QuanLy" asp-action="QuanLyNP"><i class="fa fa-clock-o orange_color"></i> <span>Danh sách nghỉ phép</span></a></li>
+                        }
+                        <li>
+                            <a href="#nghiphep" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-envelope-o blue2_color"></i> <span>Nghỉ phép</span></a>
+                            <ul class="collapse list-unstyled" id="nghiphep">
+                                <li><a asp-controller="QuanLy" asp-action="QuanLyNPUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">> <span>Đơn xin nghỉ phép của tôi</span></a></li>
+                                <li><a asp-controller="QuanLy" asp-action="CreateNP">> <span>Viết đơn xin nghỉ phép</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-star-o red_color"></i> <span>Khen thưởng - Kỷ luật</span></a>
+                            <ul class="collapse list-unstyled" id="apps">
+                                @if (roles.Contains("Admin"))
+                                {
+                                    <li><a asp-controller="QuanLy" asp-action="QuanLyKhenThuong">> <span>Khen Thưởng</span></a></li>
+                                    <li><a asp-controller="QuanLy" asp-action="QuanLyKyLuat">> <span>Kỷ Luật</span></a></li>
+                                }
+                                <li><a asp-controller="QuanLy" asp-action="QuanLyKTUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">> <span>Khen Thưởng-Kỷ Luật Của Tôi</span></a></li>
+                            </ul>
+                        </li>
+                        @if (roles.Contains("Admin"))
+                        {
+                            <li>
+                                <a href="#Luong" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-money yellow_color"></i> <span>Quản Lý Lương</span></a>
+                                <ul class="collapse list-unstyled" id="Luong">
+                                    <li><a asp-controller="QuanLy" asp-action="QuanLyLuongNV">> <span>Lương Nhân Viên</span></a></li>
+                                    <li><a asp-controller="QuanLy" asp-action="QuanLyTinhLuong">> <span>Tính Lương Nhân Viên</span></a></li>
+                                </ul>
+                            </li>
+                        }
+                        <li>
+                            <a href="#phongban" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-group green_color"></i> <span>Quản Phòng Ban</span></a>
+                            <ul class="collapse list-unstyled" id="phongban">
+                                @if (roles.Contains("Admin"))
+                                {
+                                    <li><a asp-controller="QuanLy" asp-action="QuanLyPhongBan">> <span>Danh Sách Phòng Ban</span></a></li>
+                                }
+                                <li><a asp-controller="QuanLy" asp-action="QuanLyPhongBanUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">> <span>Phòng Ban Của Tôi</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+                <!-- topbar -->
+                <div class="topbar">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                            <div class="logo_section">
+                                <a asp-controller="QuanLy" asp-action="Index"><img class="img-responsive" src="/_Layout_Admin/images/logo/logo.png" alt="#" /></a>
+                            </div>
+                            <div class="right_topbar">
+                                <div class="icon_info">
+                                    <ul class="user_profile_dd">
+                                        <li>
+                                            <a class="dropdown-toggle" data-toggle="dropdown"><img style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="@UserManager.GetUserAsync(User).Result.HinhAnh" alt="#" /><span class="name_user">@UserManager.GetUserName(User)</span></a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Thông tin tài khoản</a>
+                                                <a class="dropdown-item" asp-controller="QuanLy" asp-action="DetailsNhanVienUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">Thông tin nhân viên</a>
+                                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/SetPassword">Đổi mật khẩu</a>
+                                                <form id="logoutForm" class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "QuanLy", new { area = "" })">
+                                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0"><i style ="color : black" class="fa fa-sign-out"></i> Logout</button>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- end topbar -->
+                <!-- dashboard inner -->
+                @RenderBody()
+                <!-- end dashboard inner -->
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="/_Layout_Admin/js/jquery.min.js"></script>
+    <script src="/_Layout_Admin/js/popper.min.js"></script>
+    <script src="/_Layout_Admin/js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="/_Layout_Admin/js/animate.js"></script>
+    <!-- select country -->
+    <script src="/_Layout_Admin/js/bootstrap-select.js"></script>
+    <!-- owl carousel -->
+    <script src="/_Layout_Admin/js/owl.carousel.js"></script>
+    <!-- chart js -->
+    <script src="/_Layout_Admin/vjs/Chart.min.js"></script>
+    <script src="/_Layout_Admin/js/Chart.bundle.min.js"></script>
+    <script src="/_Layout_Admin/js/utils.js"></script>
+    <script src="/_Layout_Admin/js/analyser.js"></script>
+    <!-- nice scrollbar -->
+    <script src="/_Layout_Admin/js/perfect-scrollbar.min.js"></script>
+    <script>
+        var ps = new PerfectScrollbar('#sidebar');
+    </script>
+    <!-- custom js -->
+    <script src="/_Layout_Admin/js/custom.js"></script>
+    <script src="/_Layout_Admin/js/chart_custom_style1.js"></script>
+</body>
+
+</html>

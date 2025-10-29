@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DoAnCoSo.Models.NghiPhep>
+
+@{
+    ViewData["Title"] = "QuanLyNP";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<h1>Quản Lý Đơn Nghỉ Phép</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                @Html.DisplayNameFor(model => model.NhanViens)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenNhanVien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LyDo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayBatDau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayKetThuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiNghi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="table-info">
+            <td>
+                @Html.DisplayFor(modelItem => item.NhanViens.MaNhanVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNhanVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LyDo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBatDau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayKetThuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiNghi)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTao)
+                </td>
+                <td>
+                @if (item.TrangThai == "Đã Xét Duyệt")
+                {
+                    
+                        <div class="button_block"><button type="button" class="btn cur-p btn-success">@Html.DisplayFor(modelItem => item.TrangThai)</button></div>
+                    
+                }
+                    @if (item.TrangThai == "Từ Chối")
+                    {
+
+                        <div class="button_block"><button type="button" class="btn cur-p btn-danger">@Html.DisplayFor(modelItem => item.TrangThai)</button></div>
+
+                    }
+                    @if (item.TrangThai == "Chưa Xét Duyệt")
+                    {
+
+                        <div class="button_block"><button type="button" class="btn cur-p btn-secondary">@Html.DisplayFor(modelItem => item.TrangThai)</button></div>
+
+                    }
+                </td>
+            <td>
+                    <a asp-action="PheDuyetNghiPhep" asp-route-id="@item.Id">Phê Duyệt</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

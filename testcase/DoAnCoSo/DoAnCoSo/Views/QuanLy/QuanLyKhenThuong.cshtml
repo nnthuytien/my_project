@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DoAnCoSo.Models.KhenThuong>
+
+@{
+    ViewData["Title"] = "KhenThuong";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+<h1>Khen Thưởng</h1>
+<br />
+<a class="btn btn-primary" asp-action="CreateLoaiKT" >Thêm Loại Khen Thưởng</a>
+<a class="btn btn-primary" asp-action="CreateKT" >Thêm Khen Thưởng</a>
+<br />
+<br />
+<br />
+<table class="table table table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LyDo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayQD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTien)
+            </th>
+            <th>
+                Loại Khen Thưởng
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="table-info">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanViens.TenNhanVien)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LyDo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayQD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaiKhenThuongs.TenKT)
+            </td>
+            <td>
+                <a asp-action="EditKT" asp-route-id="@item.Id">Chỉnh Sửa</a> |
+                <a asp-action="DeleteKT" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

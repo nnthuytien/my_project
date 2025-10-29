@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DoAnCoSo.Models.LuongThang>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+<br />
+<h1>Bảng Lương Nhân Viên</h1>
+<br />
+<hr />
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-warning">
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                Tháng/Năm
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LuongThoaThuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayNghiCoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayNghiKhongLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KhenThuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KyLuat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhuCap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UngTruoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThucLanh)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-success">
+                <td>
+                    @Html.DisplayFor(modelItem => item.bangLuongs.NhanViens.TenNhanVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Thang)/@Html.DisplayFor(modelItem => item.Nam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LuongThoaThuan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayNghiCoLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayNghiKhongLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhenThuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KyLuat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhuCap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UngTruoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThucLanh)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

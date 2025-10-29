@@ -1,0 +1,55 @@
+﻿@model DoAnCoSo.Models.KhenThuong
+
+@{
+    ViewData["Title"] = "DeleteKT";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyKhenThuong">Quay Lại Danh Sách</a>
+<br />
+<br />
+<hr />
+<hr />
+<h3>Bạn có chắc chắn muốn xóa??</h3>
+<div>
+    <h4>Khen Thưởng</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LyDo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LyDo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayQD)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayQD)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoTien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoTien)
+        </dd>
+        <dt class = "col-sm-2">
+            Tên Nhân Viên
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NhanViens.TenNhanVien)
+        </dd>
+        <dt class = "col-sm-2">
+            Loại Khen Thưởng
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loaiKhenThuongs.TenKT)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteKT">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

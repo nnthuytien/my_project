@@ -1,0 +1,70 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<DoAnCoSo.Models.ChiTietPhongBan>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "DetailsPhongBanUser";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<h1>Chi Tiết Phòng Ban</h1>
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyPhongBanUser" asp-route-id="@UserManager.GetUserAsync(User).Result.MaNhanVien">Quay Lại Danh Sách</a>
+<br />
+<br />
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+@if (TempData["danger"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["danger"]
+    </div>
+}
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                Mã Chi Tiết Phòng Ban
+            </th>
+            <th>
+                Tên Phòng Ban
+            </th>
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                Hình Ảnh
+            </th>
+            <th>
+                Chức Vụ
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-info">
+                <td>
+                    @Html.DisplayFor(modelItem => item.PBId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phongBans.TenPB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanViens.TenNhanVien)
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.NhanViens.HinhAnh)" width="150" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanViens.ChucVu.TenChucVu)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

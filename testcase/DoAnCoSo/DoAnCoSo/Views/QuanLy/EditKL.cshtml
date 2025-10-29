@@ -1,0 +1,50 @@
+﻿@model DoAnCoSo.Models.KyLuat
+
+@{
+    ViewData["Title"] = "EditKL";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyKyLuat">Quay Lại Danh Sách</a>
+<br />
+<br />
+<hr />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditKL">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MaNhanVien" class="control-label"></label>
+                <select asp-for="MaNhanVien" class="form-control" asp-items="ViewBag.nhanvien"></select>
+                <span asp-validation-for="MaNhanVien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LyDo" class="control-label"></label>
+                <input asp-for="LyDo" class="form-control" />
+                <span asp-validation-for="LyDo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayQD" class="control-label"></label>
+                <input type="date" asp-for="NgayQD" class="form-control" />
+                <span asp-validation-for="NgayQD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KLId" class="control-label"></label>
+                <select asp-for="KLId" class="form-control" asp-items="ViewBag.kyluat"></select>
+                <span asp-validation-for="KLId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoTien" class="control-label"></label>
+                <input asp-for="SoTien" class="form-control" />
+                <span asp-validation-for="SoTien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

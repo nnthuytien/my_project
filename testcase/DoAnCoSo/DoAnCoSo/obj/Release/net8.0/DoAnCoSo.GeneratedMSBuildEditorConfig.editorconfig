@@ -1,0 +1,277 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DoAnCoSo
+build_property.RootNamespace = DoAnCoSo
+build_property.ProjectDir = D:\Tài liệu tham khảo tốt nghiệp\DoAnCoSo\DoAnCoSo\DoAnCoSo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Tài liệu tham khảo tốt nghiệp\DoAnCoSo\DoAnCoSo\DoAnCoSo
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateKL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUtMLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateKT.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUtULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateLoaiKL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUxvYWlLTC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateLoaiKT.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUxvYWlLVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateLuongNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUx1b25nTlYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateLuongNVThang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZUx1b25nTlZUaGFuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateNP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZU5QLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreateNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZU5WLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/CreatePhongBan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XENyZWF0ZVBob25nQmFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteKL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZUtMLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteKT.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZUtULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteLuongNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZUx1b25nTlYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteLuongNVThang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZUx1b25nTlZUaGFuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZU5WLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeletePhongBan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZVBob25nQmFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DeleteTK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERlbGV0ZVRLLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DetailsNhanVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERldGFpbHNOaGFuVmllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DetailsNhanVienUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERldGFpbHNOaGFuVmllblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DetailsPhongBan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERldGFpbHNQaG9uZ0Jhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/DetailsPhongBanUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERldGFpbHNQaG9uZ0JhblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/EditKL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEVkaXRLTC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/EditKT.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEVkaXRLVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/EditLuongNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEVkaXRMdW9uZ05WLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/EditNhanVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEVkaXROaGFuVmllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/KhoiphucNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEtob2lwaHVjTlYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/Manage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XE1hbmFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/PheDuyetNghiPhep.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFBoZUR1eWV0TmdoaVBoZXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyKhenThuong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeUtoZW5UaHVvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyKLUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeUtMVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyKTUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeUtUVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyKyLuat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeUt5THVhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyLuongNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeUx1b25nTlYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyNP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeU5QLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyNPUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeU5QVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyNV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeU5WLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyPhongBan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeVBob25nQmFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyPhongBanUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeVBob25nQmFuVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyTinhLuong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeVRpbmhMdW9uZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/QuanLy/QuanLyTK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFF1YW5MeVRLLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_LayoutQL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRRTC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tài liệu tham khảo tốt nghiệp/DoAnCoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-26bex91a7p

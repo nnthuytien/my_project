@@ -1,0 +1,869 @@
+{
+  "info": {
+    "_postman_id": "215491d1-6c0d-496e-8751-a14298075268",
+    "name": "Booking management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52738250"
+  },
+  "item": [
+    {
+      "name": "create new booking and view",
+      "item": [
+        {
+          "name": "create booking",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"dataFirstName\", \"Alex\");\r",
+                  "pm.collectionVariables.set(\"dataLastName\", \"Brown\");\r",
+                  "pm.collectionVariables.set(\"dataPrice\", \"3232\");\r",
+                  "pm.collectionVariables.set(\"dataDepositpaid\", true);\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.booking.firstname\r",
+                  "const lastName_actual =getResponse.booking.lastname\r",
+                  "const price_actual =getResponse.booking.totalprice\r",
+                  "const status_actual =getResponse.booking.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"{{dataFirstName}}\",\r\n\"lastname\" : \"{{dataLastName}}\",\r\n\"totalprice\" : {{dataPrice}},\r\n\"depositpaid\" : {{dataDepositpaid}},\r\n\"bookingdates\" : {\r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Verify response has bookingID that is created before\", function () {\r",
+                  "    const bookingID = pm.variables.get(\"bookingID\")\r",
+                  "    pm.expect(pm.response.text()).to.include(bookingID);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"Alex\",\r\n\"lastname\" : \"Brown\",\r\n\"totalprice\" : 111,\r\n\"depositpaid\" : true,\r\n\"bookingdates\" : {\r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n}\r\n}"
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get detail booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.firstname\r",
+                  "const lastName_actual =getResponse.lastname\r",
+                  "const price_actual =getResponse.totalprice\r",
+                  "const status_actual =getResponse.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookinfgURL}}/booking/{{bookingID}}",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking",
+                "{{bookingID}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "update booking and view",
+      "item": [
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "const respone = pm.response.json()\r",
+                  "    pm.collectionVariables.set('access_token',respone.token)\r",
+                  "console.log(respone.token)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"username\" : \"admin\",\r\n\"password\" : \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/auth",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.booking.firstname\r",
+                  "const lastName_actual =getResponse.booking.lastname\r",
+                  "const price_actual =getResponse.booking.totalprice\r",
+                  "const status_actual =getResponse.booking.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID_updateflow\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"dataFirstName\", \"Alex\");\r",
+                  "pm.collectionVariables.set(\"dataLastName\", \"Brown\");\r",
+                  "pm.collectionVariables.set(\"dataPrice\", \"3232\");\r",
+                  "pm.collectionVariables.set(\"dataDepositpaid\", true);\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"{{dataFirstName}}\",\r\n\"lastname\" : \"{{dataLastName}}\",\r\n\"totalprice\" : {{dataPrice}},\r\n\"depositpaid\" : {{dataDepositpaid}},\r\n\"bookingdates\" : {\r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update booking",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"dataFirstName_update\", \"Hong\");\r",
+                  "pm.collectionVariables.set(\"dataLastName_update\", \"phan\");\r",
+                  "pm.collectionVariables.set(\"dataPrice_update\", \"3232\");\r",
+                  "pm.collectionVariables.set(\"dataDepositpaid_update\", true);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json();\r",
+                  "const firstName_actual = getResponse.firstname \r",
+                  "\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get('dataFirstName_update')\r",
+                  "\r",
+                  "//the first information\r",
+                  "const firstName_init = pm.variables.get('dataFirstName')\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Check respone is correct as new information\", function () {\r",
+                  "    pm.expect(firstName_actual).to.eql(firstName_expected);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Check respone is correct as new information\", function () {\r",
+                  "    pm.expect(firstName_actual).to.not.eql(firstName_init);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "token={{access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{access_token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"{{dataFirstName_update}}\",\r\n\"lastname\" : \"{{dataLastName_update}}\",\r\n\"totalprice\" : {{dataPrice_update}},\r\n\"depositpaid\" : {{dataDepositpaid_update}},\r\n\"bookingdates\" : {\r\n    \r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n},\r\n\"additionalneeds\" : \"Breakfast\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking/{{bookingID_updateflow}}",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking",
+                "{{bookingID_updateflow}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get detail booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.firstname\r",
+                  "const lastName_actual =getResponse.lastname\r",
+                  "const price_actual =getResponse.totalprice\r",
+                  "const status_actual =getResponse.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookinfgURL}}/booking/{{bookingID}}",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking",
+                "{{bookingID}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "delete a booking flow",
+      "item": [
+        {
+          "name": "create booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.booking.firstname\r",
+                  "const lastName_actual =getResponse.booking.lastname\r",
+                  "const price_actual =getResponse.booking.totalprice\r",
+                  "const status_actual =getResponse.booking.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID_deleteflow\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"dataFirstName\", \"Alex\");\r",
+                  "pm.collectionVariables.set(\"dataLastName\", \"Brown\");\r",
+                  "pm.collectionVariables.set(\"dataPrice\", \"3232\");\r",
+                  "pm.collectionVariables.set(\"dataDepositpaid\", true);\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"{{dataFirstName}}\",\r\n\"lastname\" : \"{{dataLastName}}\",\r\n\"totalprice\" : {{dataPrice}},\r\n\"depositpaid\" : {{dataDepositpaid}},\r\n\"bookingdates\" : {\r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete booking",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Delete booking successfully\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "token={{access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{bookinfgURL}}/booking/{{bookingID_deleteflow}}",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking",
+                "{{bookingID_deleteflow}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get detail booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404 not found\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "//Actual result\r",
+                  "const getResponse = pm.response.json()\r",
+                  "const firsrName_actual =getResponse.firstname\r",
+                  "const lastName_actual =getResponse.lastname\r",
+                  "const price_actual =getResponse.totalprice\r",
+                  "const status_actual =getResponse.depositpaid\r",
+                  "\r",
+                  "//Expected result\r",
+                  "const firstName_expected = pm.variables.get(\"dataFirstName\")\r",
+                  "const lastName_expected = pm.variables.get(\"dataLastName\")\r",
+                  "const price_expected = pm.variables.get(\"dataPrice\")\r",
+                  "const depositpaid_expected = pm.variables.get(\"dataDepositpaid\")\r",
+                  "\r",
+                  "//Compare\r",
+                  "pm.test(\"Verify response is correct\", function () {\r",
+                  "    pm.expect(firsrName_actual).to.eql(firstName_expected)\r",
+                  "    pm.expect(lastName_actual).to.eql(lastName_expected)\r",
+                  "    pm.expect(price_actual.toString()).to.eql(price_expected)\r",
+                  "    pm.expect(status_actual).to.eql(depositpaid_expected)\r",
+                  "});\r",
+                  "\r",
+                  "//set booking variables\r",
+                  "const booking = getResponse.bookingid \r",
+                  "pm.collectionVariables.set(\"bookingID\", booking)\r",
+                  "console.log(booking)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookinfgURL}}/booking/{{bookingID}}",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking",
+                "{{bookingID}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "validation_create booking",
+      "item": [
+        {
+          "name": "create new booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code == 200) {\r",
+                  "    const status = pm.iterationData.get('statusCode')\r",
+                  "    pm.response.to.have.status(status);\r",
+                  "});\r",
+                  "\r",
+                  "//get response/actua; \r",
+                  "    const response = pm.response.json();\r",
+                  "    const firstName_actual = response.booking.firstname;\r",
+                  "    const lastName_actual = response.booking.lastname;\r",
+                  "    const totalPrice_actual = response.booking.totalprice;\r",
+                  "    const depositPaid_actual = response.booking.depositpaid;\r",
+                  "\r",
+                  "\r",
+                  "//get input/expected data\r",
+                  "const firstName_expected = pm.iterationData.get('firstName')\r",
+                  "const lastName_expected = pm.iterationData.get('lastName')\r",
+                  "const totalPrice_expected = pm.iterationData.get('totalPrice')\r",
+                  "const depositPaid_expected = pm.iterationData.get('depositpaid')\r",
+                  "\r",
+                  "\r",
+                  "//compare\r",
+                  "    pm.test(\"Check response is correct\", function () {\r",
+                  "        pm.expect(firstName_actual).to.eql(firstName_expected);\r",
+                  "        pm.expect(lastName_actual).to.eql(lastName_expected);\r",
+                  "        pm.expect(totalPrice_actual).to.eql(totalPrice_expected);\r",
+                  "        pm.expect(depositPaid_actual).to.eql(depositPaid_expected);\r",
+                  "    });\r",
+                  "\r",
+                  "} else {\r",
+                  "\r",
+                  "    pm.test(\"Status code is correct\", function () {\r",
+                  "        const status = pm.iterationData.get('statusCode');\r",
+                  "        pm.response.to.have.status(status);\r",
+                  "    });\r",
+                  "\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"firstname\" : \"{{firstName}}\",\r\n\"lastname\" : \"{{lastName}}\",\r\n\"totalprice\" : {{totalPrice}},\r\n\"depositpaid\" : {{depositpaid}},\r\n\"bookingdates\" : {\r\n\"checkin\" : \"2018-01-01\",\r\n\"checkout\" : \"2019-01-01\"\r\n}\r\n}"
+            },
+            "url": {
+              "raw": "{{bookinfgURL}}/booking",
+              "host": [
+                "{{bookinfgURL}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "dataFirstNam",
+      "value": ""
+    },
+    {
+      "key": "dataLastName",
+      "value": ""
+    },
+    {
+      "key": "dataFirstName",
+      "value": ""
+    },
+    {
+      "key": "dataPrice",
+      "value": ""
+    },
+    {
+      "key": "dataDepositpaid",
+      "value": ""
+    },
+    {
+      "key": "bookingID",
+      "value": ""
+    },
+    {
+      "key": "dataFirstdaName_update",
+      "value": ""
+    },
+    {
+      "key": "dataLastName_update",
+      "value": ""
+    },
+    {
+      "key": "dataPrice_update",
+      "value": ""
+    },
+    {
+      "key": "dataDepositpaid_update",
+      "value": ""
+    },
+    {
+      "key": "bookingID_updateflow",
+      "value": ""
+    },
+    {
+      "key": "dataFirstName_update",
+      "value": ""
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "bookingID_deleteflow",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+﻿@model DoAnCoSo.Models.LuongThang
+
+@{
+    ViewData["Title"] = "DeleteLuongNVThang";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyTinhLuong">Quay Lại Danh Sách</a>
+<br />
+<br />
+<hr />
+<hr />
+<h3>Bạn có chắc chắn muốn xóa??</h3>
+<div>
+<div>
+    <h4>LuongThang</h4>
+    <hr />
+    <dl class="row">
+            <dt class="col-sm-2">
+                Tên Nhân Viên
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.bangLuongs.NhanViens.TenNhanVien)
+            </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Thang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Thang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayTL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayTL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LuongThoaThuan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LuongThoaThuan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayNghiCoLuong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayNghiCoLuong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayNghiKhongLuong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayNghiKhongLuong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KhenThuong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KhenThuong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KyLuat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KyLuat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhuCap)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhuCap)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UngTruoc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UngTruoc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThucLanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThucLanh)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteLuongNVThang">
+        <input type="hidden" asp-for="LTId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

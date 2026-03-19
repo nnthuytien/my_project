@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DoAnCoSo.Models.PhongBan>
+
+@{
+    ViewData["Title"] = "QuanLyPhongBan";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<h1>Danh Sách phòng Ban</h1>
+
+<br />
+<a class="btn btn-primary" asp-action="CreatePhongBan">Thêm Phòng Ban</a>
+<br />
+<br />
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4 col-md-3 margin_bottom_30">
+            <div class="heading_section">
+                <h4>@item.TenPB</h4>
+            </div>
+            <div class="column">
+                <a data-fancybox="gallery" href="/images/PhongBan.jpg"><img class="img-responsive" src="/images/PhongBan.jpg" alt="#" /></a>
+            </div>
+            <div class="heading_section">
+                <h4>
+                    <a asp-action="DetailsPhongBan" asp-route-id="@item.PBId" style="color: #fff;
+    margin: 0;
+    font-weight: 200;
+    text-align: center;
+    padding: 8px 0 8px;
+    font-size: 18px;"><i class="fa fa-eye"></i> Chi Tiết</a>
+                </h4>
+                <h4>
+                    <a asp-action="DeletePhongBan" asp-route-id="@item.PBId" style="color: #fff;
+    margin: 0;
+    font-weight: 200;
+    text-align: center;
+    padding: 8px 0 8px;
+    font-size: 18px;"><i class="fa fa-trash-o"></i>Xóa</a>
+                </h4>
+
+            </div>
+        </div>
+    }
+</div>

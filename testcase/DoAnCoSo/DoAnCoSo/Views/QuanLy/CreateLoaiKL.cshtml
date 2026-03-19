@@ -1,0 +1,36 @@
+﻿@model DoAnCoSo.Models.LoaiKyLuat
+
+@{
+    ViewData["Title"] = "CreateLoaiKL";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<br />
+<a class="btn btn-primary" asp-controller="QuanLy" asp-action="QuanLyKyLuat">Quay Lại Danh Sách</a>
+<a class="btn btn-primary" asp-action="CreateKL">Thêm Kỷ Luật</a>
+<br />
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateLoaiKL">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenKL" class="control-label"></label>
+                <input asp-for="TenKL" class="form-control" />
+                <span asp-validation-for="TenKL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoTa" class="control-label"></label>
+                <input asp-for="MoTa" class="form-control" />
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

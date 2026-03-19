@@ -1,0 +1,8 @@
+firstName,lastName,totalPrice,depositpaid,statusCode
+An,Nguyen,8888,true,200
+Binh,Pham,8888,false,200
+Phuc,Phan,,false,400
+Hong,Ha,lan,false,400
+Hoa,Le,255,556,200
+Phuc,Nguyen,444,dgagesh,200
+Ha,,76,true,200

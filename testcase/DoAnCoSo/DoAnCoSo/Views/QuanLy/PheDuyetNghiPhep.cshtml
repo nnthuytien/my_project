@@ -1,0 +1,81 @@
+﻿@model DoAnCoSo.Models.NghiPhep
+
+@{
+    ViewData["Title"] = "PheDuyetNghiPhep";
+    Layout = "~/Views/Shared/_LayoutQL.cshtml";
+}
+
+<h1>PheDuyetNghiPhep</h1>
+
+<h4>NghiPhep</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PheDuyetNghiPhep">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MaNhanVien" class="control-label"></label>
+                <input asp-for="MaNhanVien" class="form-control" value="@ViewBag.Categories" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="TenNhanVien" class="control-label"></label>
+                <input asp-for="TenNhanVien" value="@ViewBag.tenNV" class="form-control" readonly />
+                <span asp-validation-for="TenNhanVien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LyDo" class="control-label"></label>
+                <input asp-for="LyDo" class="form-control" />
+                <span asp-validation-for="LyDo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayBatDau" class="control-label"></label>
+                <input type="date" asp-for="NgayBatDau" class="form-control" />
+                <span asp-validation-for="NgayBatDau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayKetThuc" class="control-label"></label>
+                <input type="date" asp-for="NgayKetThuc" class="form-control" />
+                <span asp-validation-for="NgayKetThuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoaiNghi" class="control-label"></label>
+                <div>
+                    <label>
+                        <input type="radio" asp-for="LoaiNghi" value="Có lương" /> Có lương
+                    </label>
+                    <span style="margin-right: 35px;"></span>
+                    <label>
+                        <input type="radio" asp-for="LoaiNghi" value="Không lương" /> Không lương
+                    </label>
+                </div>
+                <span asp-validation-for="LoaiNghi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrangThai" class="control-label"></label>
+                <div>
+                    <label>
+                        <input type="radio" asp-for="TrangThai" value="Chưa Xét Duyệt" /> Chưa Xét Duyệt
+                    </label>
+                    <span style="margin-right: 35px;"></span>
+                    <label>
+                        <input type="radio" asp-for="TrangThai" value="Đã Xét Duyệt" /> Đã Xét Duyệt
+                    </label>
+                    <span style="margin-right: 35px;"></span>
+                    <label>
+                        <input type="radio" asp-for="TrangThai" value="Từ Chối" /> Từ Chối
+                    </label>
+                </div>
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="QuanLyNP">Back to List</a>
+</div>
+
